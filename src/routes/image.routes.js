@@ -5,9 +5,9 @@ module.exports = (app) =>{
     const Photos = require('../controller/controller_routes')
 
     cloudinary.config({
-        cloud_name:process.env.CLOUD_NAME,
-        api_key:process.env.API_KEY,
-        api_secret:process.env.API_SECRET
+        cloud_name:'divl37evs',
+        api_key:'454498726193375',
+        api_secret:'n0bOmHU59hbYSXYhOkb9FPcTUDI'
     })
     app.get('/', Photos.principalView);
     app.get('/images/add', Photos.addImages);

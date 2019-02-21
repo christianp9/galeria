@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 mongoose
-  .connect(process.env.MONGODB_URI, { useNewUrlParser: true })
+  .connect('mongodb://root:test12345@ds121163.mlab.com:21163/student', { useNewUrlParser: true })
   .then(() => {
     console.log('conected to mongo')
   })
