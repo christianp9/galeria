@@ -3,7 +3,7 @@ module.exports = (app) =>{
     const cloudinary = require('cloudinary');
     const fs = require('fs-extra');
     const Photos = require('../controller/controller_routes')
-
+    
     cloudinary.config({
         cloud_name:'divl37evs',
         api_key:'454498726193375',

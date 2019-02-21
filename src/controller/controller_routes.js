@@ -1,6 +1,14 @@
 'use strict'
 const photo = require('../models/photo');
 const Photos={};
+const cloudinary = require('cloudinary');
+const fs = require('fs-extra');
+
+cloudinary.config({
+    cloud_name:'divl37evs',
+    api_key:'454498726193375',
+    api_secret:'n0bOmHU59hbYSXYhOkb9FPcTUDI'
+})
 
 Photos.principalView = async (req,res) =>{
     const photos = await photo.find();
@@ -29,7 +37,7 @@ Photos.postImages = async (req,res) =>{
     res.redirect('/')
 }
 
-Photos.deletePhotos = async(req,res) =>{
+Photos.deletePhotos = async (req,res) =>{
     const {photo_id} = req.params;
     const photod = await photo.findByIdAndDelete(photo_id);
     const result = await cloudinary.v2.uploader.destroy(photod.public_id);
