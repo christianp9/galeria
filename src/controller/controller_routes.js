@@ -1,5 +1,5 @@
 'use strict'
-const models = require('../models/photo');
+const photo = require('../models/photo');
 const Photos={};
 
 Photos.principalView = async (req,res) =>{
